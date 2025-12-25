@@ -6,7 +6,7 @@ export const client = createClient({
   projectId: 'lxhvxr5b', // <--- REPLACE THIS
   dataset: 'production',
   useCdn: true, // set to `false` to bypass the edge cache
-  apiVersion: '2025-12-09', // use current date (YYYY-MM-DD) to target the latest API version
+  apiVersion: '2025-12-09', 
 })
 
 const builder = imageUrlBuilder(client)
