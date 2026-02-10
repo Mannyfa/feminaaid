@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { 
   Heart, Shield, BookOpen, Users, Globe, Award, 
-  DollarSign, HandHeart, CheckCircle, 
+  DollarSign, HandHeart, 
   ChevronDown, Building2, ArrowLeft, X, Copy, Check, Loader2, Phone, Mail
 } from 'lucide-react';
 
@@ -11,6 +11,14 @@ import {
 import award1 from './images/imagecertificate.jpg'; 
 import logo from './images/logoimage.jpg'; 
 import zenith from './images/banklogo.jpg';
+import event5 from './images/event5.jpg';
+import newImpactImage from './images/realimpactpeople.jpg';
+import about from './images/aboutpage.jpg';
+import newhero from './images/learnhero.jpg';
+import second from './images/seond.jpg';
+import lastone from './images/lastone.jpg';
+import fcmblogo from './images/fcmb.jpg'
+
 
 // --- CUSTOM CSS FOR ANIMATIONS ---
 const styles = `
@@ -28,7 +36,7 @@ const styles = `
   .animate-float-delayed { animation: float-delayed 8s ease-in-out infinite; }
 `;
 
-// --- COMPONENT: Sticky Header ---
+
 const StickyHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -108,8 +116,8 @@ const DonateModal = ({ isOpen, onClose }) => {
   
   if (!isOpen) return null;
 
-  const accountNumber = "1011234567"; 
-  const accountName = "Femina Aid Network NGO";
+  const accountNumber = "2006043567"; 
+  const accountName = "FEMINA AID NETWORK";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(accountNumber);
@@ -143,8 +151,8 @@ const DonateModal = ({ isOpen, onClose }) => {
           {/* Zenith Bank Logo */}
           <div className="flex justify-center mb-4">
              <img 
-               src={zenith}
-               alt="Zenith Bank" 
+               src={fcmblogo}
+               alt="FCMB" 
                className="h-12 object-contain"
              />
           </div>
@@ -295,9 +303,9 @@ const LearnMore = () => {
   
   // Images of African female children/students for the background
   const heroImages = [
-    "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?q=80&w=2000&auto=format&fit=crop", // Smiling girl
-    "https://images.unsplash.com/photo-1517677277316-bf58a285036c?q=80&w=2000&auto=format&fit=crop", // Students in uniform
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop"  // Girl writing
+    newhero, // Smiling girl
+    second, // Students in uniform
+    lastone  // Girl writing
   ];
 
   useEffect(() => {
@@ -395,7 +403,7 @@ const LearnMore = () => {
             <div className="relative group">
               <div className="absolute -inset-4 bg-[#009EE3]/20 rounded-tr-[100px] rounded-bl-[100px] -z-10 group-hover:rotate-2 transition-transform duration-500"></div>
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                src={about} 
                 alt="Our Founder" 
                 className="rounded-tr-[80px] rounded-bl-[80px] shadow-2xl w-full object-cover h-[500px]"
               />
@@ -443,8 +451,7 @@ const LearnMore = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  To actively dismantle barriers to entry for women in professional and civic spaces through 
-                  education, legal advocacy, and direct mentorship. We act today.
+                  To dismantle barriers limiting women’s access to professional and leadership spaces through education, legal advocacy, and mentorship. We act now to create meaningful and lasting change.
                 </p>
               </div>
             </FadeInSection>
@@ -519,11 +526,11 @@ const LearnMore = () => {
             <h2 className="text-4xl font-bold mb-8">Why "Feminism"?</h2>
             <div className="bg-white/10 backdrop-blur-md p-10 md:p-14 rounded-[3rem] border border-white/20 shadow-2xl">
               <p className="text-2xl md:text-3xl font-light leading-relaxed mb-6 italic">
-                "Feminism is not about hating men. It is about respecting women. It is the radical notion that women are people."
+                "Feminism is rooted in a simple truth: women matter. Their voices, choices, dignity, and potential deserve recognition, protection, and space to flourish."
               </p>
               <div className="w-20 h-1 bg-white/30 mx-auto mb-6 rounded-full"></div>
               <p className="text-white/80 text-lg">
-                To us, gender equality benefits society as a whole. When women rise, economies grow, families stabilize, and communities thrive.
+                We believe that when women are empowered to live fully and safely, societies are transformed. Women’s progress strengthens families, drives economic growth, and builds healthier, more resilient communities. Gender equality is not merely a women’s concern; it is a human and societal imperative.
               </p>
             </div>
           </FadeInSection>
@@ -534,36 +541,46 @@ const LearnMore = () => {
       <section className="py-24 max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <FadeInSection>
-            <h2 className="text-3xl font-bold mb-6">Real Impact, Real People.</h2>
-            <p className="text-slate-600 mb-8 text-lg">
-              We serve women and girls directly, but our ripple effect touches survivors, grassroots activists, and entire villages.
-            </p>
-            <ul className="space-y-4 mb-8">
-              {[
-                "2,500+ Women trained in digital skills",
-                "15+ Cities reached across Africa & UK",
-                "40+ Policy changes advocated for"
-              ].map((stat, i) => (
-                <li key={i} className="flex items-center text-slate-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-[#E62C79] mr-3" /> {stat}
-                </li>
-              ))}
-            </ul>
-            <div className="bg-slate-50 p-6 rounded-xl border-l-4 border-[#009EE3] italic text-slate-600">
-              "Before Femina, I felt alone in my fight. Now I have an army behind me." <br/>
-              <span className="text-slate-900 font-bold not-italic text-sm mt-2 block">- Sarah J., Lagos Chapter</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900 leading-tight">
+              Real Impact, Real People.
+            </h2>
+            
+            <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+              <p>
+                Our work is grounded in real lives, real stories, and real change. We work closely with women and girls, while supporting survivors and grassroots efforts through advocacy, education, and community engagement.
+              </p>
+              <p>
+                Our impact is often seen in quiet but powerful moments—after seminars and community conversations, when young girls approach us to share their dreams with renewed confidence. Many speak about feeling encouraged to pursue paths they once thought were beyond reach.
+              </p>
+              
+              {/* Highlighted Quote within the text */}
+              <p className="text-xl font-medium text-[#E62C79] italic py-2 pl-4 border-l-2 border-[#E62C79]">
+                “One day, I want to become a lawyer like you.”
+              </p>
+
+              <p>
+                Femina Aid Network is growing, and so is our impact. Every programme, conversation, and partnership is part of a larger movement to amplify women’s voices and build safer, more equitable communities.
+              </p>
             </div>
           </FadeInSection>
           
           <FadeInSection delay="200ms">
             <div className="grid grid-cols-2 gap-4">
-               <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=400" className="rounded-2xl shadow-lg mt-8 hover:scale-105 transition-transform duration-500" alt="Impact 1"/>
-               <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=400" className="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500" alt="Impact 2"/>
+               {/* I replaced the Unsplash URLs with variables. Just import your new images at the top of your file! */}
+               <img 
+                 src={newImpactImage} /* REPLACE THIS WITH YOUR NEW IMPORTED IMAGE */
+                 className="w-full h-[400px] object-cover rounded-2xl shadow-lg mt-8 hover:scale-105 transition-transform duration-500" 
+                 alt="Femina Impact Story"
+               />
+               <img 
+                 src={event5} /* Using one of your existing images for the second slot */
+                 className="w-full h-[400px] object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500" 
+                 alt="Community Impact"
+               />
             </div>
           </FadeInSection>
         </div>
       </section>
-
       {/* --- 7. AWARDS & CERTIFICATIONS --- */}
       <AwardsSection />
 
