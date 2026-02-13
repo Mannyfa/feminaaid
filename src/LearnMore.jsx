@@ -10,7 +10,7 @@ import {
 // --- IMAGE IMPORTS ---
 import award1 from './images/imagecertificate.jpg'; 
 import logo from './images/logoimage.jpg'; 
-import zenith from './images/banklogo.jpg';
+
 import event5 from './images/event5.jpg';
 import newImpactImage from './images/realimpactpeople.jpg';
 import about from './images/aboutpage.jpg';
@@ -429,10 +429,7 @@ const LearnMore = () => {
                   <h4 className="text-3xl font-bold text-[#009EE3]">5+</h4>
                   <p className="text-xs font-bold text-slate-500 uppercase">Years</p>
                 </div>
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center min-w-[100px]">
-                  <h4 className="text-3xl font-bold text-[#E62C79]">10k+</h4>
-                  <p className="text-xs font-bold text-slate-500 uppercase">Lives</p>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -497,9 +494,9 @@ const LearnMore = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { title: "Legal Aid & Advocacy", desc: "Providing pro-bono defense for survivors.", icon: <Shield className="w-6 h-6 text-white"/>, color: "bg-[#E62C79]" },
-            { title: "Education Programs", desc: "Scholarships for STEM and Arts.", icon: <BookOpen className="w-6 h-6 text-white"/>, color: "bg-[#009EE3]" },
-            { title: "Emergency Support", desc: "Safe housing for immediate crises.", icon: <Heart className="w-6 h-6 text-white"/>, color: "bg-slate-800" },
-            { title: "Community Organizing", desc: "Grassroots rallies and town halls.", icon: <Users className="w-6 h-6 text-white"/>, color: "bg-[#009EE3]" },
+            { title: "Education Programs", desc: "Scholarships, mentorship, and educational support across multiple fields of study and career paths.", icon: <BookOpen className="w-6 h-6 text-white"/>, color: "bg-[#009EE3]" },
+            { title: "Emergency Support", desc: "We provide emotional support, guidance, and referrals for girls and women facing urgent or distressing situations.", icon: <Heart className="w-6 h-6 text-white"/>, color: "bg-slate-800" },
+            { title: "Community Engagement", desc: "Grassroots outreach initiatives, community conversations, and educational forums focused on empowerment, inclusion, and social development.", icon: <Users className="w-6 h-6 text-white"/>, color: "bg-[#009EE3]" },
             { title: "Policy Research", desc: "Data-driven campaigns for law change.", icon: <Building2 className="w-6 h-6 text-white"/>, color: "bg-[#E62C79]" },
             { title: "Digital Literacy", desc: "Teaching coding and digital safety.", icon: <Globe className="w-6 h-6 text-white"/>, color: "bg-slate-800" },
           ].map((item, i) => (
@@ -755,11 +752,11 @@ const LearnMore = () => {
           <div className="mt-16 pt-8 border-t border-white/20 grid md:grid-cols-3 gap-8 text-left text-sm">
              <div>
                <h5 className="font-bold mb-2">Visit Us</h5>
-               <p className="opacity-80">123 Ahmadu Bello Way<br/>Victoria Island, Lagos</p>
+               <p className="opacity-80">COMING SOON!!!</p>
              </div>
              <div>
                <h5 className="font-bold mb-2">Contact</h5>
-               <p className="opacity-80 flex items-center gap-2"><Phone className="w-4 h-4"/> +234 800 123 4567</p>
+               <p className="opacity-80 flex items-center gap-2"><Phone className="w-4 h-4"/> +234 807 890 2701</p>
                <p className="opacity-80 flex items-center gap-2"><Mail className="w-4 h-4"/> hello@femina.com</p>
              </div>
              <div>

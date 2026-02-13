@@ -23,15 +23,13 @@ const GalleryPage = () => {
   // You can change the titles/dates here to match the real events.
   const allImages = [
     { id: 1, src: event1, category: "Summits", title: "Annual Summit 2024", location: "Lagos", date: "Oct 12" },
-    { id: 2, src: event5, category: "Summits", title: "Leadership Panel", location: "Abuja", date: "Sep 28" },
-    { id: 3, src: event15, category: "Community", title: "Networking Mixer", location: "Virtual", date: "Aug 15" },
+    { id: 2, src: event5, category: "Summits", title: "Leadership Panel", location: "Lagos", date: "Sep 28" },
+    { id: 3, src: event15, category: "Community", title: "Networking Mixer", location: "Lagos", date: "Aug 15" },
     { id: 4, src: event7, category: "Workshops", title: "Tech Bootcamp", location: "Lagos", date: "Jul 22" },
-    { id: 5, src: event8, category: "Dinners", title: "Founders Dinner", location: "VI, Lagos", date: "Jun 10" },
-    { id: 6, src: event11, category: "Workshops", title: "Skill Acquisition", location: "Ibadan", date: "May 05" },
+    { id: 5, src: event8, category: "Dinners", title: "Founders Dinner", location: "Lagos", date: "Jun 10" },
+    { id: 6, src: event11, category: "Workshops", title: "Skill Acquisition", location: "Lagos", date: "May 05" },
     // Reusing images to fill the grid for demonstration
-    { id: 7, src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80", category: "Community", title: "Team Bonding", location: "Lekki", date: "Dec 14" },
-    { id: 8, src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80", category: "Summits", title: "Keynote Speech", location: "London", date: "Nov 20" },
-    { id: 9, src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80", category: "Dinners", title: "Gala Night", location: "Accra", date: "Jan 15" },
+    
   ];
 
   const categories = ["All", "Summits", "Workshops", "Community", "Dinners"];

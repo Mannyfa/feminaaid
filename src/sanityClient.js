@@ -3,9 +3,9 @@ import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
 export const client = createClient({
-  projectId: 'lxhvxr5b', // <--- REPLACE THIS
+  projectId: 'lxhvxr5b', 
   dataset: 'production',
-  useCdn: true, // set to `false` to bypass the edge cache
+  useCdn: true, 
   apiVersion: '2025-12-09', 
 })
 

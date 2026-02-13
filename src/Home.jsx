@@ -17,7 +17,12 @@ import event7 from './images/event7.jpg';
 import event8 from './images/event8.jpg';
 import bolaimg from './images/bolaimage.jpg';
 import why from './images/whyfeminaaid.jpg';
-import home from './images/homepage.jpg'; // Using your imported homepage image
+import home from './images/homepage.jpg'; 
+import founerimage from './images/founder.jpg';
+import newhero from './images/learnhero.jpg';
+import second from './images/seond.jpg';
+import lastone from './images/lastone.jpg';
+
 
 // --- CUSTOM STYLES & ANIMATIONS ---
 const customStyles = `
@@ -108,7 +113,7 @@ const Marquee = () => {
 };
 
 // --- COMPONENT: Tweet Card (Glassmorphism Style) ---
-const TweetCard = ({ name, handle, content, date }) => (
+const TweetCard = ({ name, content }) => (
   <div className="relative group h-full">
     <div className="relative bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-white/40 shadow-xl shadow-slate-200/40 hover:-translate-y-2 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between">
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -196,13 +201,13 @@ const FounderVideo = () => {
             <div>
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E62C79]/10 border border-[#E62C79]/20 text-[#E62C79] text-sm font-medium mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#E62C79] mr-2 animate-pulse"></span>
-                Founder's Story
+                INTERVIEW
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
                 "We didn't just build a network. We built a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E62C79] to-[#009EE3]">lifeline.</span>"
               </h2>
               <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                Watch Dr. Alero Ejeye discuss the origins of Femina Aid Network, the challenges of female leadership in Africa, and her vision for the next decade of empowerment.
+                Watch Alero Ejeye discuss in an interview, Menstrual Hygiene Training: Health Experts Call for More Menstrual Education and Access
               </p>
               <a 
                 href={videoUrl}
@@ -393,9 +398,9 @@ const TeamSection = () => {
     const members = [
       { 
         name: "Alero Ejeye", 
-        role: "Founder & Lead Mentor", 
-        bio: `Alero Ejeye is a legal practitioner with a strong professional background in corporate and finance law, with particular specialization in regulatory compliance. Alongside her legal practice, she has built a sustained record of service in community development and advocacy, particularly in advancing the rights and wellbeing of women and young girls.\n\nShe has been actively involved in volunteerism and charitable work since 2015, channeling her passion for social impact into structured, purpose-driven initiatives. This commitment culminated in the establishment of Femina Aid Network, a registered non-governmental organization dedicated to women’s empowerment, girl-child advocacy, gender-based violence awareness, sexual and reproductive health education, and mentorship programs for young girls.\n\nAlero’s advocacy is deeply informed by lived experiences of gender-based discrimination and a lifelong belief in collective support among women; what she often describes as being “a girl’s girl.” She believes that sustainable progress for women is achieved through education, solidarity, and access to safe, empowering spaces.\n\nBeyond her NGO work, Alero serves in youth leadership at New Revelation Baptist Church, Ikeja, Lagos, where she currently holds the positions of Welfare Officer and Treasurer of the Youth Fellowship, and previously served as a Youth Deaconess during Youth Week 2025. She has also spoken at programs organized by ReachHerHub, for which she received an award for participation, and actively supports menstrual health initiatives, including the donation of over 200 sanitary pads to underserved girls.\n\nThrough Femina Aid Network, Alero remains committed to building systems of support that enable women and girls to thrive with dignity, confidence, and opportunity.`,
-        image: feminaImage, 
+        role: "Founder ", 
+        bio: `Alero Ejeye is a legal practitioner with a strong professional background in corporate and finance law, with particular specialization in regulatory compliance. Alongside her legal practice, she has built a sustained record of service in community development and advocacy, particularly in advancing the rights and wellbeing of women and young girls.\n\nShe has been actively involved in volunteerism and charitable work since 2015, channeling her passion for social impact into structured, purpose-driven initiatives. This commitment culminated in the establishment of Femina Aid Network, a registered non-governmental organization dedicated to women’s empowerment, girl-child advocacy, gender-based violence awareness, sexual and reproductive health education, and mentorship programs for young girls.\n\nAlero’s advocacy is deeply informed by lived experiences of gender-based discrimination and a lifelong belief in collective support among women; what she often describes as being “a girl’s girl.” She believes that sustainable progress for women is achieved through education, solidarity, and access to safe, empowering spaces.\n\nBeyond her NGO work, Alero serves in youth leadership at New Revelation Baptist Church, Ikeja, Lagos, where she currently holds the positions of Welfare Officer and Treasurer of the Youth Fellowship, and previously served as a Youth Deaconess during Youth Week 2025. She has also spoken at programs organized by ReachHerHub, for which she received an award for participation, and actively supports menstrual health initiatives, including the donation of over 200 sanitary pads to help girls stay healthy and comfident.\n\nThrough Femina Aid Network, Alero remains committed to building systems of support that enable women and girls to thrive with dignity, confidence, and opportunity.`,
+        image: founerimage, 
         socials: { linkedin: "https://linkedin.com/in/your-profile", twitter: "https://x.com/your-profile", instagram: "https://instagram.com/your-profile" }
       },
       { 
@@ -421,7 +426,7 @@ const TeamSection = () => {
                 <Users className="w-4 h-4 mr-2" />
                 The Power Behind the Network
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Meet the Leaders</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Meet the Team</h2>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">
                 The dedicated team working tirelessly to build connections, create opportunities, and support your journey.
               </p>
@@ -488,10 +493,10 @@ const Gallery = () => {
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const faqs = [
-    { question: "Is there a membership fee?", answer: "We offer both free community access and a premium tier for exclusive mentorship circles. You can start for free today!" },
-    { question: "Can I join if I am not in Tech?", answer: "Absolutely! Femina A Network is for women in all industries—business, medicine, arts, and technology. Leadership is universal." },
-    { question: "How do the mentorship circles work?", answer: "We match you with 4-5 peers and one senior mentor based on your career stage and goals. You meet monthly for guided sessions." },
-    { question: "Are events virtual or in-person?", answer: "We host weekly virtual webinars accessible worldwide, and monthly in-person meetups in major hubs like Lagos, Abuja, and London." },
+    { question: "What does Femina Aid Network do?", answer: "Femina Aid Network empowers young girls through educational outreaches, mentorship, and advocacy programs designed to build confidence, self-worth, and leadership skills. Our goal is to help girls believe in themselves and realise their full potential." },
+    { question: "Who are your programs for?", answer: "Our programs are for girls and women of all ages. While we place strong emphasis on empowering young girls, Femina Aid Network exists to support every woman; helping them build confidence, find mentorship, and access the encouragement they need to thrive at every stage of life." },
+    { question: "How can I support or get involved with Femina Aid Network?", answer: "You can support Femina Aid Network by volunteering, partnering with us for outreaches, mentoring young girls, or making donations. Every form of support helps us reach more girls and change lives." },
+    { question: "Do you care about men?What about men?", answer: "Yes, we do. Femina Aid Network focuses on empowering girls and women because they face unique social, economic, and systemic challenges. However, we believe true empowerment thrives in inclusive communities. We support positive engagement with men and boys and welcome allies who share our commitment to dignity, equality, and social development." },
   ];
 
   return (
@@ -535,9 +540,9 @@ const Home = () => {
   ];
 
   const tweets = [
-    { name: "Sarah J.", handle: "sarah_tech", content: "I found my co-founder through Femina Aid! The mentorship circle changed my perspective on leadership entirely.", date: "2 days ago" },
-    { name: "Amara K.", handle: "amara_designs", content: "Finally a safe space where I can ask 'stupid' questions without judgement. The resources are top tier.", date: "1 week ago" },
-    { name: "Ngozi E.", handle: "ngozi_codes", content: "Landed my first remote role thanks to the job board. This community is the real deal.", date: "3 weeks ago" },
+    { name: "Bimpe Alabi", handle: "sarah_tech", content: "Before Femina Aid Network came to my school, I used to doubt myself a lot. Listening to the speakers made me realise that my fears don’t define me. I now believe I can become anything I want, and I’m no longer afraid to speak up", date: "2 days ago" },
+    { name: "Folashade Adegbile", handle: "amara_designs", content: "“Femina Aid Network changed the way I see myself. I met mentors who encouraged me and showed me that my dreams are valid. I left the programme feeling confident and inspired to work hard and believe in myself.", date: "1 week ago" },
+    { name: "Chiamaka Bernard", handle: "ngozi_codes", content: "After the Femina Aid Network outreach, I found courage I didn’t know I had. I stopped feeling alone and learnt that other girls face the same struggles. Today, I am more confident, focused, and hopeful about my future.", date: "3 weeks ago" },
   ];
 
   return (
@@ -616,7 +621,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             <FadeInSection>
               <div className="text-center lg:text-left">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-pink-100 text-[#E62C79] text-sm font-bold mb-8 shadow-sm"><Sparkles className="w-4 h-4 mr-2 fill-current" /> #1 Community for African Women</div>
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-pink-100 text-[#E62C79] text-sm font-bold mb-8 shadow-sm"><Sparkles className="w-4 h-4 mr-2 fill-current" /> Thriving Community for Women</div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">Connect. Grow. <br /><span className="relative inline-block mt-2"><span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#E62C79] via-[#009EE3] to-[#E62C79] bg-[length:200%_auto] animate-gradient">Love. Liberty. Light.</span><span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300/40 -z-0 rounded-sm transform -rotate-1"></span></span></h1>
                 <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">Unlock your potential with <b>Femina Aid Network</b>. We provide the mentorship, funding access, and safe spaces you need to lead with confidence.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -625,10 +630,10 @@ const Home = () => {
                 </div>
                 <div className="mt-10 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-500 justify-center lg:justify-start">
                    <div className="flex -space-x-3">
-                      <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt=""/>
-                      <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt=""/>
-                      <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" alt=""/>
-                      <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center font-bold text-slate-600 text-xs">+2k</div>
+                      <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src= {newhero} alt=""/>
+                      <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src={second} alt=""/>
+                      <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src={lastone} alt=""/>
+                      
                    </div>
                  
                 </div>
@@ -666,7 +671,7 @@ const Home = () => {
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Femina Aid Network?</h2>
                 <p className="text-slate-600 text-lg mb-6 leading-relaxed">We believe that when women support women, incredible things happen. Our network was founded on the principle that access to resources and a strong community are the keys to breaking barriers.</p>
                 <ul className="space-y-4">
-                  {["Access to exclusive industry insights", "Weekly peer-to-peer support circles", "Direct channels to potential employers"].map((item, index) => (
+                  {["Access to exclusive industry insights"].map((item, index) => (
                     <li key={index} className="flex items-start"><CheckCircle className="w-6 h-6 text-[#009EE3] mr-3 flex-shrink-0" /><span className="text-slate-700 font-medium">{item}</span></li>
                   ))}
                 </ul>
@@ -742,14 +747,14 @@ const Home = () => {
               <h4 className="text-lg font-bold text-white mb-6">Contact Us</h4>
               <div className="space-y-4">
                 <a href="mailto:hello@feminaanetwork.com" className="flex items-center gap-3 hover:text-[#ED70A4] transition-colors text-white/90"><Mail className="w-5 h-5 text-white" /><span>feminaaidnetwork@gmail.com</span></a>
-                <div className="flex items-center gap-3 text-white/90"><Phone className="w-5 h-5 text-white" /><span>+234 800 123 4567</span></div>
+                <div className="flex items-center gap-3 text-white/90"><Phone className="w-5 h-5 text-white" /><span> +234 80 78902701</span></div>
               </div>  
             </div>
             <div>
               <h4 className="text-lg font-bold text-white mb-6">Follow Us</h4>
               <div className="flex gap-4">
                 <a href="https://x.com/FeminaANetwork" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><XIcon className="w-5 h-5" /></a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><Instagram className="w-5 h-5" /></a>
+                <a href=" https://www.instagram.com/feminaanetwork?igsh=MTU3ZXY2bDgxb2NmOA%3D%3D&utm_source=qr" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><Instagram className="w-5 h-5" /></a>
                 <a href="#" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><TikTokIcon className="w-5 h-5" /></a>
               </div>
             </div>
