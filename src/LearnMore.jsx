@@ -315,7 +315,7 @@ const LearnMore = () => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 5000); 
     return () => clearInterval(timer);
-  }, []);
+  }, [heroImages.length]); // <--- Fixed here
 
   const scrollToFooter = () => {
     const footerElement = document.getElementById('footer-contact');
@@ -763,7 +763,7 @@ const LearnMore = () => {
                <h5 className="font-bold mb-2">Legal</h5>
                <div className="flex gap-4 opacity-80">
                  <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
-                 <a href="#" className="hover:underline">Terms</a>
+                 {/* <a href="" className="hover:underline">Terms</a> */}
                </div>
              </div>
           </div>

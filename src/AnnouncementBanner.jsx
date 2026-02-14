@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calendar, MapPin, ArrowRight } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { createClient } from "@sanity/client";
 
 // --- CONFIGURATION ---

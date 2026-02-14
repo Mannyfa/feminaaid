@@ -7,7 +7,7 @@ import Preloader from './Preloader';
 import AnnouncementBanner from './AnnouncementBanner'; 
 
 // --- IMAGE IMPORTS ---
-import feminaImage from './images/Femina.jpg';
+
 import logo from './images/logoimage.jpg';
 import event1 from './images/event1.jpg';
 import event5 from './images/event5.jpg';
@@ -89,11 +89,11 @@ const XIcon = ({ className }) => (
   </svg>
 );
 
-const TikTokIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.16c0 2.52-1.12 4.88-3.11 6.24-2.12 1.45-4.8 1.48-6.95.1-2.12-1.36-3.32-3.7-3.13-6.22.18-2.53 1.68-4.7 3.91-5.83 2.11-1.07 4.63-1.01 6.69.17V13c-1.32-.88-2.92-.88-4.24 0-1.18.79-1.8 2.22-1.58 3.63.22 1.41 1.25 2.57 2.6 2.97 1.35.4 2.82.02 3.86-1.03.95-.97 1.43-2.34 1.34-3.7-.01-4.9-.01-9.8-.01-14.7l-3.46-.13z"/>
-  </svg>
-);
+// const TikTokIcon = ({ className }) => (
+//   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+//     <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.16c0 2.52-1.12 4.88-3.11 6.24-2.12 1.45-4.8 1.48-6.95.1-2.12-1.36-3.32-3.7-3.13-6.22.18-2.53 1.68-4.7 3.91-5.83 2.11-1.07 4.63-1.01 6.69.17V13c-1.32-.88-2.92-.88-4.24 0-1.18.79-1.8 2.22-1.58 3.63.22 1.41 1.25 2.57 2.6 2.97 1.35.4 2.82.02 3.86-1.03.95-.97 1.43-2.34 1.34-3.7-.01-4.9-.01-9.8-.01-14.7l-3.46-.13z"/>
+//   </svg>
+// );
 
 // --- COMPONENT: Infinite Marquee ---
 const Marquee = () => {
@@ -751,7 +751,7 @@ const Home = () => {
               <div className="flex gap-4">
                 <a href="https://x.com/FeminaANetwork" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><XIcon className="w-5 h-5" /></a>
                 <a href=" https://www.instagram.com/feminaanetwork?igsh=MTU3ZXY2bDgxb2NmOA%3D%3D&utm_source=qr" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><Instagram className="w-5 h-5" /></a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><TikTokIcon className="w-5 h-5" /></a>
+                {/* <a href="#" className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-[#E62C79] text-white transition-all transform hover:-translate-y-1"><TikTokIcon className="w-5 h-5" /></a> */}
               </div>
             </div>
           </div>
@@ -759,7 +759,7 @@ const Home = () => {
             <div>© {new Date().getFullYear()} Femina A Network. All rights reserved.</div>
             <div className="flex gap-6">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              {/* <a href="#" className="hover:text-white transition-colors">Terms of Service</a> */}
             </div>
           </div>
         </footer>
