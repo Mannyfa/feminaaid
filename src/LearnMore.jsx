@@ -251,7 +251,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
 // --- COMPONENT: Awards Section ---
 const AwardsSection = () => {
   const awards = [
-    { title: "NGO of the Year 2024", organization: "West African Civil Society", image: award1, desc: "Recognized for outstanding contribution to women's digital literacy." }
+    { title: "Certificate of Recognition", image: award1, desc: "Recognized for outstanding presentation as Guest speaker" }
   ];
 
   return (
@@ -701,10 +701,9 @@ const LearnMore = () => {
       <section className="py-12 bg-slate-50 text-center">
         <p className="text-slate-500 uppercase tracking-widest font-bold text-sm mb-6">Proudly Partnered With</p>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          <span className="text-xl font-bold">UN Women</span>
-          <span className="text-xl font-bold">Tech4Dev</span>
+          
           <span className="text-xl font-bold">Legal Aid Council</span>
-          <span className="text-xl font-bold">Global Fund for Women</span>
+          
         </div>
       </section>
 
@@ -715,7 +714,7 @@ const LearnMore = () => {
           {[
             { q: "Is this organization political?", a: "We are non-partisan. However, we advocate for policies that protect human rights and gender equality." },
             { q: "Who can access your services?", a: "Our services are open to all women and girls, regardless of religion, ethnicity, or background. Some programs are specifically for marginalized communities." },
-            { q: "How do you ensure accountability?", a: "We publish an annual impact report and are governed by an independent board of directors." }
+            { q: "How do you ensure accountability?", a: "We ensure accountability through clear internal oversight, proper record-keeping, and regular documentation of our activities and outcomes." }
           ].map((faq, i) => (
             <FadeInSection key={i} delay={`${i * 50}ms`}>
               <details className="group bg-white border border-slate-200 rounded-xl p-4 cursor-pointer open:border-[#E62C79] transition-all open:shadow-md">

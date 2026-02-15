@@ -534,7 +534,7 @@ const Home = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   const features = [
-    { title: "Mentorship Programs", description: "Connect with industry leaders who can guide your career path and help you navigate challenges with confidence.", icon: <Users className="w-6 h-6 text-[#E62C79]" /> },
+    { title: "Mentorship Programs", description: "Connect with experienced professionals who can share practical guidance and support as you navigate your career journey.", icon: <Users className="w-6 h-6 text-[#E62C79]" /> },
     { title: "Exclusive Events", description: "Join webinars, workshops, and in-person meetups designed to upskill and inspire our diverse community.", icon: <Calendar className="w-6 h-6 text-[#E62C79]" /> },
     { title: "Safe Community", description: "A supportive space where you can share experiences, ask questions, and grow without judgement.", icon: <Heart className="w-6 h-6 text-[#E62C79]" /> }
   ];
@@ -623,7 +623,7 @@ const Home = () => {
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-pink-100 text-[#E62C79] text-sm font-bold mb-8 shadow-sm"><Sparkles className="w-4 h-4 mr-2 fill-current" /> Thriving Community for Women</div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">Connect. Grow. <br /><span className="relative inline-block mt-2"><span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#E62C79] via-[#009EE3] to-[#E62C79] bg-[length:200%_auto] animate-gradient">Love. Liberty. Light.</span><span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300/40 -z-0 rounded-sm transform -rotate-1"></span></span></h1>
-                <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">Unlock your potential with <b>Femina Aid Network</b>. We provide the mentorship, funding access, and safe spaces you need to lead with confidence.</p>
+                <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">We are committed to helping young girls grow into their full potential - one life, one story at a time</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <button onClick={() => setIsRegisterOpen(true)} className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-[#E62C79] border-2 border-[#E62C79] rounded-full hover:bg-[#c91d64] hover:border-[#c91d64] shadow-lg shadow-pink-500/30 hover:-translate-y-1">Join the Network</button>
                   <Link to="/learn-more" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-700 transition-all duration-200 bg-white border-2 border-slate-200 rounded-full hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900">Learn More</Link>
