@@ -4,21 +4,34 @@ import emailjs from '@emailjs/browser';
 import { 
   Heart, Shield, BookOpen, Users, Globe, Award, 
   DollarSign, HandHeart, 
-  ChevronDown, Building2, ArrowLeft, X, Copy, Check, Loader2, Phone, Mail
+  ChevronDown, Building2, ArrowLeft, X, Copy, Check, Loader2, Phone, Mail, Calendar
 } from 'lucide-react';
+import { createClient } from "@sanity/client";
+import imageUrlBuilder from '@sanity/image-url';
 
-// --- IMAGE IMPORTS ---
-import award1 from './images/imagecertificate.jpg'; 
+// --- IMAGE IMPORTS (Moved to the very top!) ---
+
 import logo from './images/logoimage.jpg'; 
-
 import event5 from './images/event5.jpg';
 import newImpactImage from './images/realimpactpeople.jpg';
 import about from './images/aboutpage.jpg';
 import newhero from './images/learnhero.jpg';
 import second from './images/seond.jpg';
 import lastone from './images/lastone.jpg';
-import fcmblogo from './images/fcmb.jpg'
+import fcmblogo from './images/fcmb.jpg';
 
+// --- SANITY CONFIGURATION ---
+const client = createClient({
+  projectId: "lxhvxr5b", 
+  dataset: "production",
+  useCdn: true,
+  apiVersion: "2023-01-01",
+});
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return source ? builder.image(source) : null;
+}
 
 // --- CUSTOM CSS FOR ANIMATIONS ---
 const styles = `
@@ -35,7 +48,6 @@ const styles = `
   .animate-float { animation: float 6s ease-in-out infinite; }
   .animate-float-delayed { animation: float-delayed 8s ease-in-out infinite; }
 `;
-
 
 const StickyHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -248,46 +260,100 @@ const RegistrationModal = ({ isOpen, onClose }) => {
   );
 };
 
-// --- COMPONENT: Awards Section ---
+// --- COMPONENT: Dynamic Awards Section ---
 const AwardsSection = () => {
-  const awards = [
-    { title: "Certificate of Recognition", image: award1, desc: "Recognized for outstanding presentation as Guest speaker" }
-  ];
+  const [awards, setAwards] = useState([]);
+  const [isLoadingAwards, setIsLoadingAwards] = useState(true);
+
+  useEffect(() => {
+    const fetchAwards = async () => {
+      try {
+        const query = `*[_type == "award"] | order(date desc)`;
+        const data = await client.fetch(query);
+        setAwards(data);
+      } catch (error) {
+        console.error("Failed to fetch awards:", error);
+      } finally {
+        setIsLoadingAwards(false);
+      }
+    };
+
+    fetchAwards();
+  }, []);
 
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#E62C79]/5 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#009EE3]/5 rounded-full blur-3xl animate-float-delayed"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         <FadeInSection>
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-yellow-100 border border-yellow-200 text-yellow-700 text-sm font-bold mb-4">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E62C79]/10 border border-[#E62C79]/20 text-[#E62C79] text-sm font-bold mb-4">
               <Award className="w-4 h-4 mr-2" />
               Recognition
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Awards & Certifications</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Our commitment to excellence has been recognized by leading global institutions.
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Awards & Certifications</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              A testament to our dedication, impact, and continuous growth in empowering women.
             </p>
           </div>
         </FadeInSection>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {awards.map((item, index) => (
-            <FadeInSection key={index} delay={`${index * 150}ms`}>
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="h-64 w-full bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/0 transition-colors"></div>
+        {isLoadingAwards ? (
+          <div className="flex justify-center py-12">
+            <Loader2 className="w-10 h-10 text-[#E62C79] animate-spin" />
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {awards.map((award, index) => (
+              <FadeInSection key={award._id} delay={`${index * 150}ms`}>
+                <div className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group h-full">
+                  
+                  {/* Image Area */}
+                  <div className="relative h-56 bg-slate-100 overflow-hidden p-4 flex items-center justify-center">
+                    {award.image ? (
+                      <img 
+                        src={urlFor(award.image).width(600).url()} 
+                        alt={award.title} 
+                        className="max-w-full max-h-full object-contain transform transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <Award className="w-16 h-16 text-slate-300" />
+                    )}
+                  </div>
+
+                  {/* Content Area */}
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 leading-tight">
+                      {award.title}
+                    </h3>
+                    <p className="text-[#009EE3] font-bold text-sm mb-4 uppercase tracking-wide">
+                      {award.organization}
+                    </p>
+                    
+                    {award.description && (
+                      <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        {award.description}
+                      </p>
+                    )}
+
+                    <div className="pt-4 border-t border-slate-100 mt-auto flex items-center text-xs text-slate-500 font-bold uppercase tracking-wider">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      {award.date ? new Date(award.date).toLocaleDateString() : 'Date Not Specified'}
+                    </div>
+                  </div>
+
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{item.title}</h3>
-                <p className="text-[#009EE3] text-sm font-bold mb-3 uppercase tracking-wide">{item.organization}</p>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            </FadeInSection>
-          ))}
-        </div>
+              </FadeInSection>
+            ))}
+          </div>
+        )}
+        
+        {!isLoadingAwards && awards.length === 0 && (
+          <div className="text-center py-12 text-slate-400">
+            <p>No awards uploaded yet.</p>
+          </div>
+        )}
+
       </div>
     </section>
   );
@@ -315,7 +381,7 @@ const LearnMore = () => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 5000); 
     return () => clearInterval(timer);
-  }, [heroImages.length]); // <--- Fixed here
+  }, [heroImages.length]); 
 
   const scrollToFooter = () => {
     const footerElement = document.getElementById('footer-contact');
@@ -578,7 +644,8 @@ const LearnMore = () => {
           </FadeInSection>
         </div>
       </section>
-      {/* --- 7. AWARDS & CERTIFICATIONS --- */}
+
+      {/* --- 7. DYNAMIC AWARDS & CERTIFICATIONS --- */}
       <AwardsSection />
 
       {/* 8. FUNDING */}
@@ -701,9 +768,7 @@ const LearnMore = () => {
       <section className="py-12 bg-slate-50 text-center">
         <p className="text-slate-500 uppercase tracking-widest font-bold text-sm mb-6">Proudly Partnered With</p>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          
           <span className="text-xl font-bold">Legal Aid Council</span>
-          
         </div>
       </section>
 
@@ -762,7 +827,6 @@ const LearnMore = () => {
                <h5 className="font-bold mb-2">Legal</h5>
                <div className="flex gap-4 opacity-80">
                  <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
-                 {/* <a href="" className="hover:underline">Terms</a> */}
                </div>
              </div>
           </div>
